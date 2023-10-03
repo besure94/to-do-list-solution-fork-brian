@@ -89,5 +89,16 @@ namespace ToDoList.Tests
       int result = newItem.Id;
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectItem_Item()
+    {
+      string description01 = "Walk the dog";
+      string description02 = "Wash the dishes";
+      Item newItem01 = new Item(description01);
+      Item newItem02 = new Item(description02);
+      Item result = Item.Find(2);
+      Assert.AreEqual(newItem02, result);
+    }
   }
 }
