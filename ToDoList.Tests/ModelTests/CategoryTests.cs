@@ -2,6 +2,7 @@ using Microsoft.VisualStudio.TestTools.UnitTesting;
 using ToDoList.Models;
 using System.Collections.Generic;
 using System;
+using System.Collections.ObjectModel;
 
 namespace ToDoList.Tests
 {
@@ -59,6 +60,19 @@ namespace ToDoList.Tests
       Category newCategory2 = new Category(name02);
       Category result = Category.Find(2);
       Assert.AreEqual(newCategory2, result);
+    }
+
+    [TestMethod]
+    public void AddItem_AssociatesItemWithCategory_ItemList()
+    {
+      string description = "Walk the dog.";
+      Item newItem = new Item(description);
+      List<Item> newList = new List<Item> { newItem };
+      string name = "Work";
+      Category newCategory = new Category(name);
+      newCategory.AddItem(newItem);
+      List<Item> result = newCategory.Items;
+      CollectionAssert.AreEqual(newList, result);
     }
 
   }
