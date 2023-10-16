@@ -39,15 +39,15 @@ namespace ToDoList.Controllers
       return View(model);
     }
 
-    [HttpPost("/categories/{categoryId}/items")]
-    public ActionResult Create(int categoryId, string itemDescription)
-    {
-      Category foundCategory = Category.Find(categoryId);
-      Item newItem = new Item(itemDescription);
-      newItem.Save();
-      foundCategory.AddItem(newItem);
-      return View("Show", foundCategory);
-    }
+    // [HttpPost("/categories/{categoryId}/items")]
+    // public ActionResult Create(int categoryId, string itemDescription)
+    // {
+    //   Category foundCategory = Category.Find(categoryId);
+    //   Item newItem = new Item(itemDescription);
+    //   newItem.Save();
+    //   foundCategory.AddItem(newItem);
+    //   return View("Show", foundCategory);
+    // }
 
   }
 }
