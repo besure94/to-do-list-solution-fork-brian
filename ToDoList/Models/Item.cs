@@ -25,10 +25,9 @@ namespace ToDoList.Models
       else
       {
         Item newItem = (Item)otherItem;
-        // bool idEquality = (this.Id == newItem.Id);
+        bool idEquality = (this.Id == newItem.Id);
         bool descriptionEquality = (this.Description == newItem.Description);
-        // return (idEquality && descriptionEquality);
-        return descriptionEquality;
+        return (idEquality && descriptionEquality);
       }
     }
 
