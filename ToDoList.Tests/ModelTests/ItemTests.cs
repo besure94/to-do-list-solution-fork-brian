@@ -14,12 +14,12 @@ namespace ToDoList.Tests
     {
       Item.ClearAll();
     }
-    // public ItemTests()
-    // {
-    //   IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
-    //   Configuration = builder.Build();
-    //   DBConfiguration.ConnectionString = Configuration["ConnectionStrings:TestConnection"];
-    // }
+    public ItemTests()
+    {
+      IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+      Configuration = builder.Build();
+      DBConfiguration.ConnectionString = Configuration["ConnectionStrings:TestConnection"];
+    }
 
     // [TestMethod]
     // public void ItemConstructor_CreatesInstanceOfItem_Item()

@@ -40,8 +40,4 @@ namespace ToDoList
             });
         }
     }
-    public static class DBConfiguration
-  {
-    public static string ConnectionString = "server=localhost;port=3306;uid=root;pwd=epicodus;database=to_do_list_with_mysqlconnector;";
-  }
 }
