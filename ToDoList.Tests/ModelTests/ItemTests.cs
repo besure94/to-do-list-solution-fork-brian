@@ -1,22 +1,24 @@
-using MySql.Data.MySqlClient;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System.Collections.Generic;
 using ToDoList.Models;
 using System;
+using Microsoft.Extensions.Configuration;
 
 namespace ToDoList.Tests
 {
   [TestClass]
   public class ItemTests : IDisposable
   {
-
+    public IConfiguration Configuration { get; set; }
     public void Dispose()
     {
       Item.ClearAll();
     }
     public ItemTests()
     {
-      DBConfiguration.ConnectionString = "server=localhost;user id=root;password=3picodu$4991;port=3306;database=to_do_list_test;";
+      IConfigurationBuilder builder = new ConfigurationBuilder().AddJsonFile("appsettings.json");
+      Configuration = builder.Build();
+      DBConfiguration.ConnectionString = Configuration["ConnectionStrings:TestConnection"];
     }
 
     [TestMethod]

@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using MySql.Data.MySqlClient;
+using MySqlConnector;
 
 namespace ToDoList.Models
 {
@@ -30,9 +30,14 @@ namespace ToDoList.Models
         return (idEquality && descriptionEquality);
       }
     }
+
+    public override int GetHashCode()
+    {
+      return Id.GetHashCode();
+    }
     public void Save()
     {
-      MySqlConnection conn = DB.Connection();
+      MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
 
@@ -52,8 +57,8 @@ namespace ToDoList.Models
     }
     public static List<Item> GetAll()
     {
-      List<Item> allItems = new List<Item>();
-      MySqlConnection conn = DB.Connection();
+      List<Item> allItems = new List<Item>{ };
+      MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = "SELECT * FROM items;";
@@ -74,7 +79,7 @@ namespace ToDoList.Models
     }
     public static void ClearAll()
     {
-      MySqlConnection conn = DB.Connection();
+      MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = "DELETE FROM items;";
@@ -87,7 +92,7 @@ namespace ToDoList.Models
     }
     public static Item Find(int id)
     {
-      MySqlConnection conn = DB.Connection();
+      MySqlConnection conn = new MySqlConnection(DBConfiguration.ConnectionString);
       conn.Open();
       MySqlCommand cmd = conn.CreateCommand() as MySqlCommand;
       cmd.CommandText = "SELECT * FROM items WHERE id = @ThisId;";
