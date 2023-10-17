@@ -45,6 +45,7 @@ Next, follow the instructions in the LearnHowToProgram.com lesson ["Creating a T
 
 5. To run tests for the `Category` and `Item` classes, navigate to this project's directory called `ToDoList.Tests` and run the command `dotnet test` to test the classes.
 6. In the production directory `ToDoList`, run the command `dotnet watch run` to launch the project in development mode with a watcher.
+7. Open the browser to [https://localhost:5001](https://localhost:5001). If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this LearnHowToProgram lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-2-basic-web-applications/3-2-0-17-redirecting-to-https-and-issuing-a-security-certificate).
 
 ## Known Bugs
 
