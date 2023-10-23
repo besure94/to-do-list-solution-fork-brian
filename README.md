@@ -13,7 +13,7 @@
 
 ## Description
 
-This application presents users with a home page where they can add different types of categories of household chores to a list. They can then select a category, and add chores belonging to that category to another list saved for that specific category. Users can also view the details of each chore that they have created.
+This application presents users with a home page where they can add different types of categories of household chores to a list. They can then select a category, and add chores belonging to that category to another list saved for that specific category. Users can also view the details of each chore that they have created. They can add multiple items to a single category as well.
 
 ## Setup Instructions
 
@@ -23,9 +23,7 @@ Install the tools that are introduced in [this series of lessons on LearnHowToPr
 
 ### Set up Project Database
 
-Follow the instructions in the LearnHowToProgram.com lesson ["Introduction to MySQL Workbench: Creating a Database"](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-3-database-basics/3-3-0-04-introduction-to-mysql-workbench-creating-a-database) to create a `to_do_list_with_mysqlconnector` database with an `items` table.
-
-Next, follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-3-database-basics/3-3-0-08-creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to create a `to_do_list_with_mysqlconnector_test` database with an `items` table.
+Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-3-database-basics/3-3-0-08-creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to create a `to_do_list_with_ef_core` database with an `items` and `categories` table.
 
 ### Set up and Run Project
 
@@ -43,9 +41,8 @@ Next, follow the instructions in the LearnHowToProgram.com lesson ["Creating a T
 
 }
 
-5. To run tests for the `Category` and `Item` classes, navigate to this project's directory called `ToDoList.Tests` and run the command `dotnet test` to test the classes.
-6. In the production directory `ToDoList`, run the command `dotnet watch run` to launch the project in development mode with a watcher.
-7. Open the browser to [https://localhost:5001](https://localhost:5001). If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this LearnHowToProgram lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-2-basic-web-applications/3-2-0-17-redirecting-to-https-and-issuing-a-security-certificate).
+5. In the production directory `ToDoList`, run the command `dotnet watch run` to launch the project in development mode with a watcher.
+6. Open the browser to [https://localhost:5001](https://localhost:5001). If you cannot access localhost:5001 it is likely because you have not configured a .NET developer security certificate for HTTPS. To learn about this, review this LearnHowToProgram lesson: [Redirecting to HTTPS and Issuing a Security Certificate](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-2-basic-web-applications/3-2-0-17-redirecting-to-https-and-issuing-a-security-certificate).
 
 ## Known Bugs
 
