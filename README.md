@@ -23,7 +23,9 @@ Install the tools that are introduced in [this series of lessons on LearnHowToPr
 
 ### Set up Project Database
 
-Follow the instructions in the LearnHowToProgram.com lesson ["Creating a Test Database: Exporting and Importing Databases with MySQL Workbench"](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-3-database-basics/3-3-0-08-creating-a-test-database-exporting-and-importing-databases-with-mysql-workbench) to create a `to_do_list_with_ef_core` database with an `items` and `categories` table.
+Follow the instructions in the LearnHowToProgram.com lesson ["Introduction to MySQL Workbench: Creating a Database"](https://old.learnhowtoprogram.com/fidgetech-3-c-and-net/3-3-database-basics/3-3-0-04-introduction-to-mysql-workbench-creating-a-database)to create a `to_do_list_with_ef_core` database with an `items` and `categories` table.
+
+For the `items` table, create columns for "CategoryId", "ItemId" and "Description". For the `categories` table, create columns for "CategoryId" and "Name". Refer to the lesson directly above for more detailed instructions on how to do this.
 
 ### Set up and Run Project
 
