@@ -23,5 +23,17 @@ namespace ToDoList.Controllers
       Tag thisTag = _db.Tags.Include(tag => tag.JoinEntities).ThenInclude(join => join.Item).FirstOrDefault(tag => tag.TagId == id);
       return View(thisTag);
     }
+    public ActionResult Create()
+    {
+      return View();
+    }
+
+    [HttpPost]
+    public ActionResult Create(Tag tag)
+    {
+      _db.Tags.Add(tag);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
   }
 }
