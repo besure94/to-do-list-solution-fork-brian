@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 
 namespace ToDoList.Controllers
 {
@@ -54,6 +55,21 @@ namespace ToDoList.Controllers
     [HttpPost]
     public ActionResult Edit(Item item)
     {
+      _db.Items.Update(item);
+      _db.SaveChanges();
+      return RedirectToAction("Index");
+    }
+
+    public ActionResult MarkComplete(int id)
+    {
+      Item thisItem = _db.Items.FirstOrDefault(item => item.ItemId == id);
+      return View(thisItem);
+    }
+
+    [HttpPost]
+    public ActionResult MarkComplete(Item item)
+    {
+      item.IsComplete = true;
       _db.Items.Update(item);
       _db.SaveChanges();
       return RedirectToAction("Index");
