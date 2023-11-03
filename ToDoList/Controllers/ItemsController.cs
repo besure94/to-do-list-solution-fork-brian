@@ -18,6 +18,7 @@ namespace ToDoList.Controllers
     public ActionResult Index()
     {
       List<Item> model = _db.Items.Include(item => item.Category).ToList();
+      // List<Item> model = _db.Items.OrderBy(i=>i.DueDate).ToList();
       ViewBag.PageTitle = "View all Items";
       return View(model);
     }
